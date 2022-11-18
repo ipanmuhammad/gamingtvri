@@ -1,19 +1,19 @@
   .form-signin .form-floating:focus-within {
       z-index: 2;
   }
-
+  
   .form-signin input[type="email"] {
       margin-bottom: -1px;
       border-bottom-right-radius: 0;
       border-bottom-left-radius: 0;
   }
-
+  
   .form-signin input[type="password"] {
       margin-bottom: 10px;
       border-top-left-radius: 0;
       border-top-right-radius: 0;
   }
-
+  
   .form-registration img.img-responsive {
       display: block;
       margin-left: auto;
@@ -22,7 +22,7 @@
       height: auto;
       margin-bottom: 5px;
   }
-
+  
   .form-signin img.img-responsive {
       position: relative;
       width: 100%;
@@ -30,12 +30,20 @@
       right: 100%;
       top: 250px;
   }
-
+  
+  #img {
+      position: relative;
+      width: 30%;
+      height: auto;
+      left: 10%;
+      top: 250px;
+  }
+  
   .form-registration input {
       border-radius: 0;
       margin-bottom: -1px;
   }
-
+  
   .form-signin .form-floating {
       position: relative;
       width: 100%;
@@ -43,7 +51,7 @@
       left: 20%;
       top: 100px;
   }
-
+  
   .form-signin h2 {
       position: relative;
       width: 100%;
@@ -51,7 +59,7 @@
       left: 20%;
       top: 100px;
   }
-
+  
   .form-signin #sign-in {
       position: relative;
       width: 100%;
@@ -59,7 +67,7 @@
       left: 20%;
       top: 100px;
   }
-
+  
   #daftar {
       position: relative;
       width: 100%;
