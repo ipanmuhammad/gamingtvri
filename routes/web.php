@@ -29,13 +29,7 @@ Route::get('/', function () {
 });
 
 
-Route::get('/about', function () {
-    return view('about', [
-        "title" => "About",
-        "active" => "About",
-        "name" => "Muhammad Irfan"
-    ]);
-});
+
 
 
 Route::get('/login', [LoginController::class, 'index'])->name('login')->middleware('guest');

@@ -6,12 +6,7 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
-            <li class="nav-item">
-                <a class="nav-link {{ $active === 'Home' ? 'active' : '' }}" href="/home">Home</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link {{ $active === 'About' ? 'active' : '' }}" href="/about">about</a>
-            </li>
+
         </ul>
 
         <ul class="navbar-nav ms-auto">
