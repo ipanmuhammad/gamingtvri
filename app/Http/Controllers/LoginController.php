@@ -16,7 +16,7 @@ class LoginController extends Controller
         ]);
     }
 
-    public function authenticate (Request $request)
+    public function authenticate(Request $request)
     {
 
         $credentials = $request->validate([
@@ -30,8 +30,8 @@ class LoginController extends Controller
             return redirect()->intended('/dashboard');
         }
 
-        return back()->with('loginError','Login Failed!');
-// peler
+        return back()->with('loginError', 'Login Failed!');
+        // sdfsf
 
     }
 
