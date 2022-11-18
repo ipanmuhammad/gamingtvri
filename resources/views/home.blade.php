@@ -1,6 +1,8 @@
 @extends('layout.main')
 
 @section('container')
+    <img class="img-responsive" id="img" src="/img/login.png">
+
     {{-- <div class="row justify-content-center">
         <div class="col-lg-4">
 
