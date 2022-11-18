@@ -24,11 +24,12 @@
   }
   
   .form-signin img.img-responsive {
-      position: relative;
-      width: 100%;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      width: 50%;
       height: auto;
-      right: 100%;
-      top: 250px;
+      margin-bottom: 5px;
   }
   
   #img {
@@ -42,36 +43,4 @@
   .form-registration input {
       border-radius: 0;
       margin-bottom: -1px;
-  }
-  
-  .form-signin .form-floating {
-      position: relative;
-      width: 100%;
-      height: auto;
-      left: 20%;
-      top: 100px;
-  }
-  
-  .form-signin h2 {
-      position: relative;
-      width: 100%;
-      height: auto;
-      left: 20%;
-      top: 100px;
-  }
-  
-  .form-signin #sign-in {
-      position: relative;
-      width: 100%;
-      height: auto;
-      left: 20%;
-      top: 100px;
-  }
-  
-  #daftar {
-      position: relative;
-      width: 100%;
-      height: auto;
-      left: 20%;
-      top: 100px;
   }
