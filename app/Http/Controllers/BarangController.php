@@ -7,79 +7,86 @@ use Illuminate\Http\Request;
 
 class BarangController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function index()
     {
         return view('dashboard.barang.index');
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function create()
     {
         return view('dashboard.barang.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
-        //
+        $validatedData = $request->validate([
+            'kode_barang' => 'required|max:255',
+            'nama_barang' => 'required',
+            'limit'       => 'required',
+            'deskripsi'   => 'required|max:255',
+            'upload'       => 'required|image|mimes:png,jpg,jpeg',
+        ]);
+
+        $upload = $request->file('upload');
+        $upload->move('public/upload', $upload->hashName());
+
+        $barang = barang::create([
+            'kode_barang'    => $request->kode_barang,
+            'nama_barang'    => $request->nama_barang,
+            'jenis_barang'   => $request->jenis_barang,
+            'limit'          => $request->limit,
+            'deskripsi'      => $request->deskripsi,
+            'upload'          => $upload->hashName()
+        ]);
+
+        if($barang){
+            //redirect dengan pesan sukses
+            return redirect('/dashboard/barang')->with(['success' => 'Data Berhasil Disimpan!']);
+        }else{
+            //redirect dengan pesan error
+            return redirect('/dashboard/barang')->with(['error' => 'Data Gagal Disimpan!']);
+        }
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Barang  $barang
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Barang $barang)
-    {
-        //
-    }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Barang  $barang
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Barang $barang)
-    {
-        //
-    }
+    // public function show(Barang $barang)
+    // {
+    //     //
+    // }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Barang  $barang
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Barang $barang)
-    {
-        //
-    }
+    // /**
+    //  * Show the form for editing the specified resource.
+    //  *
+    //  * @param  \App\Models\Barang  $barang
+    //  * @return \Illuminate\Http\Response
+    //  */
+    // public function edit(Barang $barang)
+    // {
+    //     //
+    // }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Barang  $barang
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Barang $barang)
-    {
-        //
-    }
+    // /**
+    //  * Update the specified resource in storage.
+    //  *
+    //  * @param  \Illuminate\Http\Request  $request
+    //  * @param  \App\Models\Barang  $barang
+    //  * @return \Illuminate\Http\Response
+    //  */
+    // public function update(Request $request, Barang $barang)
+    // {
+    //     //
+    // }
+
+    // /**
+    //  * Remove the specified resource from storage.
+    //  *
+    //  * @param  \App\Models\Barang  $barang
+    //  * @return \Illuminate\Http\Response
+    //  */
+    // public function destroy(Barang $barang)
+    // {
+    //     //
+    // }
 }

@@ -43,7 +43,5 @@ class LoginController extends Controller
 
         return redirect('/');
     }
-    public function memek()
-    {
-    }
+
 }
